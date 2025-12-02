@@ -7,6 +7,11 @@ import json
 import logging
 import uuid
 from datetime import datetime
+from aws_xray_sdk.core import xray_recorder
+from aws_xray_sdk.core import patch_all
+
+# Patch all supported libraries for X-Ray tracing
+patch_all()
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
